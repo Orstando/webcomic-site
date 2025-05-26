@@ -31,7 +31,8 @@
     const img = document.getElementById('pageImage');
     if (path) {
       img.src = `${path}.png`;
-    } else {
+    }
+    if (path == "404.html" || path == "") {
       img.alt = "No image to display – URL path is empty.";
       img.src = "logo.png";
     }
