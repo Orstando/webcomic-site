@@ -33,10 +33,10 @@
     if (path) {
       img.src = `${path}.png`;
     }
-    if (path == "404.html" || path == "") {
-      img.alt = "No image to display – URL path is empty."; 
-      img.src = "logo.png"; // change to latest comic, like "latest.png"
-    }
+    img.onerror = () => {
+    img.src = "logo.png";
+    img.alt = "Image not found. Showing logo instead.";
+  };
   </script>
 </body>
 </html>
