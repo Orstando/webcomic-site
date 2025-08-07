@@ -60,13 +60,13 @@
     <div class="navbar">
     <div class="logo"><img src="logo-small.png"></div>
     <div class="nav-buttons">
-      <button>|<</button>
-      <button>< Prev</button>
-      <button>Next ></button>
-      <button>>|</button>
+      <button onclick="firstComic()">|<</button>
+      <button onclick="previousComic()">< Prev</button>
+      <button onclick="nextComic()">Next ></button>
+      <button onclick="latestComic()">>|</button>
     </div>
   </div>
-  <img src="logo.png" id="pageImage" alt="Image loading...">
+  <img src="latest.png" id="pageImage">
   
   <script>
     // Extract the last part of the path (e.g., '0001' from '/0001')
@@ -77,9 +77,12 @@
     if (path) {
       img.src = `${path}.png`;
     }
-    img.onerror = () => {
-    img.src = "latest.png";
-  };
+    function firstComic() {
+      img.src = "1.png";
+    };
+    function previousComic() {
+      img.src = path - 1
+    };
   </script>
 </body>
 </html>
